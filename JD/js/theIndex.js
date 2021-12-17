@@ -60,5 +60,5 @@ function showProducts(productsList) {
     $('.container').append(htmlStr)
 }
 function ToShow(id) {
-    alert(id)
+    location.href='../pages/detail.html?id='+id
 }

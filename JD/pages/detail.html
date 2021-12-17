@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/detail.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="left"><img src="../images/logo.png" alt="" width="200px" height="100px"></div>
+            <div class="word">
+                <h3>&nbsp; 靓仔优选</h3>
+                <p> &nbsp; LIANG ZAI YAN XUAN
+                </p>
+            </div>
+            <div class="middle"><img src="../images/放大镜.png" alt="" width="20px" height="20px"><input type="text"
+                    placeholder="搜索商品，发现更多优惠" ;><button type="button">搜索</button></div>
+            <div class="right"><span><img src="../images/two.png" alt="" width="40px" height="40px">
+                    <p>全程包邮</p>
+                </span><span><img width="40px" height="40px" src="../images/three.png" alt="">
+                    <p>七天退换</p>
+                </span><span><img width="40px" height="40px" src="../images/one.png" alt="">
+                    <p>品质保证</p>
+                </span></div>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <ul>
+                <li>首页</li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <script type="text/html" id="one">
+            <div class="container">
+                <div class="left">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img class="Iimg" src="{{data.photo[0].url}}" alt="" width="282px"
+                                    height="282px">
+                            </div>
+                            <div class="swiper-slide"><img src="{{data.photo[1].url}}" alt="" width="282px"
+                                    height="282px">
+                            </div>
+                            <div class="swiper-slide"><img src="{{data.photo[2].url}}" alt="" width="282px"
+                                    height="282px">
+                            </div>
+                            <div class="swiper-slide"><img src="{{data.photo[3].url}}" alt="" width="282px"
+                                    height="282px">
+                            </div>
+                            <div class="swiper-slide"><img src="{{data.photo[4].url}}" alt="" width="282px"
+                                    height="282px">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="wrap"></div>
+                    </div>
+                    <div class="pageright">
+                        <p><span>淘</span> <span>包邮</span><span>{{data.title}}</span></p>
+                        <div class="tex">
+                            <p>原价¥6.8</p>
+                            <p><span>券后价:¥</span> <span>{{data.price}}</span><span>1元券</span>
+                                <span>{{data.shop.allItemCount}}人已买</span></p>
+                        </div>
+                        <h3>优惠有效期：2021-11-21</h3>
+                        <h4 class="toCart">加入购物车</h4>
+                        <h4>领券购买</h4>
+                    </div>
+                </div>
+                <div class="right">
+                    <p>----卖家信息----</p>
+
+                    <div><img src="{{data.shop.picUrl}}" alt="" width="150px" height="150px"></div>
+                    <h4>{{data.shop.title}}</h4>
+                    <p>描述 服务 物流</p>
+                    <p>4.8 &emsp; 4.8 &emsp; 4.8</p>
+                </div>
+            </div>
+        </script>
+    </section>
+    <div id="img">
+        <div class="container">
+            <script type="text/html" id="imgs">
+                {{each images}}
+                <img src="{{$value.image.url}}" alt="">
+                {{/each}}
+            </script>
+        </div>
+
+    </div>
+    <footer>
+        <div class="container">
+            <div class="top"> <img src="../images/logo.png" alt="" width="100px" height="100px">
+                <div class="middle">
+                    <p>靓仔严选</p>
+                    <p>年轻人购物首选</p>
+                    <p>购物领劵更省钱</p>
+                </div>
+                <div class="right">| 下载app</div>
+            </div>
+            <h5><img src="../images/jingcha.png" alt="" width="18px" height="18px">浙公安网备案 33010602009949号 | ICP备案号:
+                浙ICP备17012864号-1 | <img src="../images/police.png" alt="" width="16px" height="16px"> 证照信息</h5>
+        </div>
+    </footer>
+    <div class="bottom"><img src="../images/niubi.png" alt=""></div>
+    <aside>回到顶部</aside>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/template-web.js"></script>
+    <script src="../js/detail.js"></script>
+</body>
+
+</html>

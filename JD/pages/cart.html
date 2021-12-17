@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>当当购物车</title>
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+           <img src="../images/滑稽.png" alt=""><img src="../images/h1.png" alt=""><img src="../images/h5.png" alt=""><img src="../images/h2.png" alt=""><img src="../images/h3.png" alt=""><img src="../images/h4.png" alt="">
+
+        </div>
+        <div class="book-list">
+            <div class="thead">
+                <span>商品图片</span>
+                <span>id</span>
+                <span>单价</span>
+                <span>数量</span>
+                <span>总价</span>
+                <span>操作</span>
+            </div>
+            <table>
+
+
+                <script type="text/html" id="show">
+                    {{each products}}
+                    <tr>
+                        <td><img src="{{$value.url}}" alt="shop03"></td>
+                        <td>{{$value.id}}</td>
+                        <td>￥{{$value.price}}</td>
+                        <td><input type="button" name="minus" value="-"><input type="text" name="amount"
+                                value="{{$value.num}}"><input type="button" name="plus" value="+"></td>
+                        <td class="singleprice" width="100px">{{$value.total}}</td>
+                        <td><a href="#">移入收藏</a><br><a href="#" class="delete-btn">删除</a></td>
+                    </tr>
+                    {{/each}}
+                </script>
+
+            </table>
+            <h2>商品总价: <span id="totalPrice">￥0</span></h2>
+        </div>
+
+
+
+    </div>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/template-web.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+
+</html>
