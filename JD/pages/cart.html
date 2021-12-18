@@ -17,6 +17,7 @@
         </div>
         <div class="book-list">
             <div class="thead">
+                <span><input type="checkbox" class="checkAll"></span>
                 <span>商品图片</span>
                 <span>id</span>
                 <span>单价</span>
@@ -30,12 +31,13 @@
                 <script type="text/html" id="show">
                     {{each products}}
                     <tr>
+                        <td><input type="checkbox" class="box"></td>
                         <td><img src="{{$value.url}}" alt="shop03"></td>
                         <td>{{$value.id}}</td>
                         <td>￥{{$value.price}}</td>
                         <td><input type="button" name="minus" value="-"><input type="text" name="amount"
                                 value="{{$value.num}}"><input type="button" name="plus" value="+"></td>
-                        <td class="singleprice" width="100px">{{$value.total}}</td>
+                        <td class="singleprice" width="100px">{{$value.total}}元</td>
                         <td><a href="#">移入收藏</a><br><a href="#" class="delete-btn">删除</a></td>
                     </tr>
                     {{/each}}
@@ -46,7 +48,7 @@
         </div>
 
 
-
+          <div class="toindex">挑选商品</div>
     </div>
     <script src="../js/jquery-3.6.0.js"></script>
     <script src="../js/template-web.js"></script>

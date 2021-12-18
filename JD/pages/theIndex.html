@@ -21,6 +21,7 @@
 			position: relative;
 			overflow: hidden;
 		}
+		
 	</style>
 </head>
 
@@ -297,7 +298,7 @@
 	<div class="main">
 		<div class="container">
 			<script type="text/html" id="moban">
-				{{each productsList}}
+				{{each lists}}
 				<a href="#none" onclick="ToShow({{$value.id}})">
 					<div class="product"><img src="{{$value.image}}" alt="">
 						<p>{{$value.qunTitle}} </p>
@@ -310,6 +311,7 @@
 		</div>
 
 	</div>
+	<main>更多商品</main>
 	<!-- 尾部部分 start-->
 	<footer>
 		<!-- 服务模块 -->
@@ -412,7 +414,7 @@
 			</p>
 			<div>
 				<p>京公网安备
-					11000002000088号<span>|</span>京ICP证070359号<span>|</span>互联网药品信息服务资格证编号(京)-经营性-2014-0008<span>|</span>新出发京零
+					11000002000088号<span>|</span>京ICP证07035=9号<span>|</span>互联网药品信息服务资格证编号(京)-经营性-2014-0008<span>|</span>新出发京零
 					字第大120007号</p>
 				<p>互联网出版许可证编号新出网证(京)字150号<span>|</span>出版物经营许可证<span>|</span>网络文化经营许可证京网文[2014]2148-348号<span>|</span>违法和不良信息举报电话：4006561155
 				</p>

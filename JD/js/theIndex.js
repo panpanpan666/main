@@ -42,6 +42,8 @@ function getList(newList) {
         success: function (result) {
             if (result.code == 200) {
                 let productsList = result.data.items.list
+                productsList.splice(4,1)
+                console.log(productsList);
                 // let list = [...productsList, ...newList]
                 showProducts(productsList)
             }
@@ -49,12 +51,14 @@ function getList(newList) {
     })
 }
 getList()
+let lists=[]
+function showProducts(lists) {
 
-function showProducts(productsList) {
-    console.log(productsList);
-    // list=[...list,...productsList]
+    
+    // lists=[...lists,...productsList]
+    // console.log(productsList);
     let data = {
-        productsList
+        lists
     }
     let htmlStr = template('moban', data)
     $('.container').append(htmlStr)
@@ -62,3 +66,17 @@ function showProducts(productsList) {
 function ToShow(id) {
     location.href='../pages/detail.html?id='+id
 }
+let num=1
+$('main').click(function () {
+    num++
+    $.ajax({
+        url:'http://www.xiongmaoyouxuan.com/api/tab/1/feeds?start=20&sort=0',
+        type:'get',
+        data:{'start':20*num,'sort':0},
+        success:function (data) {
+            console.log(data.data.list);
+            let result=data.data.list
+            showProducts(result)
+        }
+    })
+})
