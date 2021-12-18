@@ -64,8 +64,6 @@ function fangdajing() {
             //    左边大的总长度          右边大图总长度
             yellow.style.left=x+'px'
             yellow.style.top=y+'px'
-            console.log(parseInt(yellow.style.top));
-            console.log(parseInt(yellow.style.top)/parseInt(yellowImg.offsetHeight)*parseInt(rightImg.offsetHeight));
             rightImg.style.top=-parseInt(yellow.style.top)/parseInt(yellowImg.offsetHeight)*parseInt(rightImg.offsetHeight)+'px'
             rightImg.style.left=-parseInt(yellow.style.left)/parseInt(yellowImg.offsetWidth)*parseInt(rightImg.offsetWidth)+'px'
         }
@@ -78,7 +76,6 @@ function getId() {
     url = url.substring(num + 1)
     return url
 };
-
 function getData() {
     let res = $.ajax({
         url: 'http://www.xiongmaoyouxuan.com/api/detail?' + getId(),
@@ -112,7 +109,8 @@ function show(data, images) {
 function toCart(toprice) {
     $('.toCart').click(function () {
         let url = document.querySelector('.Iimg').getAttribute('src')
-        let id = location.href.substring(43)
+        let index=(location.href).indexOf('=')
+        let id = location.href.substring(index+1)
         let price = toprice
         let num = 1;
         let total = toprice;
