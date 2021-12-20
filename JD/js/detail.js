@@ -120,7 +120,9 @@ function toCart(toprice) {
             num,
             price,
             total,
-            url
+            url,
+            check:false,
+            allcheck:false
         }
 
         // localStorage.setItem('cart',JSON.stringify(product))
