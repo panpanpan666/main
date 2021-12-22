@@ -1,3 +1,15 @@
+$('#sureEnroll').click(function () {
+    let username=$('.username').val();
+    let password=$('.password').val();
+    let phone=$('.phone').val();
+    let res=axios.post({url:'http://localhost:3000/users',data:{
+        username,password,phone
+    }})
+    // if (res.statusText=="Created") {
+    //     confirm('注册成功，是否立即登录？')
+    // }
+    alert('注册成功，赶紧登录吧！')
+})
 var mySwiper = new Swiper('.swiper', {
     loop: true, // 循环模式选项
     autoplay: true,
@@ -5,13 +17,11 @@ var mySwiper = new Swiper('.swiper', {
     pagination: {
         el: '.swiper-pagination',
     },
-
     // 如果需要前进后退按钮
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-
     // 如果需要滚动条
     scrollbar: {
         el: '.swiper-scrollbar',
@@ -51,15 +61,14 @@ class login {
             }, 2000);
             return
         }
-        axios.post({
-            url: '../php/login.php',
+        axios.get({
+            url: 'http://localhost:3000/users',
             data: {
-                'name': userName,
+                'username': userName,
                 'password': password
             },
-            dataType: ''
         }).then(function (data) {
-            if (data != 1) {
+            if (data.length==0) {
                 $('.alert-warning p').html('<strong>WARNING:</strong> 眼角膜没用就捐了吧！')
                 document.querySelector('.user').value = ''
                 document.querySelector('.pwd').value = ''
@@ -76,6 +85,5 @@ class login {
                 location.href = './theIndex.html'
             }
         })
-
     }
 }
